@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Profile
+    </title>
+    <style>
+        .input-form {
+            background-color: lightgrey;
+            width: 50%;
+            border: 15px solid green;
+            padding: 50px;
+            margin: auto;
+            text-align: center;
+        }
+
+        #input-form-pro-dis {
+            background-color: lightgrey;
+            width: 50%;
+            border: 15px solid green;
+            padding: 50px;
+            margin: auto;
+            text-align: center;
+        }
+
+    </style>
+</head>
+
+
+<body>
+    <div class="input-form">
+        <table align="center">
+            <thead>
+                <tr>
+                    <td colspan="2" align="center">
+                        Profile Form
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <form name="profile-form" action="javascript:onSubmission()">
+                    <tr>
+                        <td>
+                            <label for="first-name-input">First Name</label>
+                        </td>
+                        <td>
+                            <input type="text" id="first-name-input" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="last-name-input">Last Name</label>
+                        </td>
+                        <td>
+                            <input type="text" id="last-name-input" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="email-input">Email</label>
+                        </td>
+                        <td>
+                            <input type="email" id="email-input" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="phone-input">Phone</label>
+                        </td>
+                        <td>
+                            <input type="tel" id="phone-input" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="gender-input">Gender</label>
+                        </td>
+                        <td>
+                            <input type="radio" name="gender" value="Male">Male
+                            <input type="radio" name="gender" value="Female">Female
+                            <input type="radio" name="gender" value="Others">Others
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="address-input">Address</label>
+                        </td>
+                        <td>
+                            <textarea id="address-input"></textarea>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="center">
+                            <input type="reset" value="Reset">
+                        </td>
+                        <td align="center">
+                            <input type="submit" value="Submit">
+                        </td>
+                    </tr>
+                </form>
+
+            </tbody>
+        </table>
+    </div>
+
+    <hr>
+
+
+    <div id="input-form-pro-dis">
+
+
+        <table align="center">
+            <thead>
+                <tr class="dis-pro">
+                    <td colspan="2" align="center">
+                        Profile
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="dis-pro">
+                    <td>
+                        <label for="first-name">First Name:</label>
+                    </td>
+                    <td>
+                        <div id="first-name"></div>
+                    </td>
+                </tr>
+                <tr class="dis-pro">
+                    <td>
+                        <label for="last-name">Last Name :</label>
+                    </td>
+                    <td>
+                        <div id="last-name"></div>
+                    </td>
+                </tr>
+                <tr class="dis-pro">
+                    <td>
+                        <label for="email">Email :</label>
+                    </td>
+                    <td>
+                        <div id="email"></div>
+                    </td>
+                </tr>
+                <tr class="dis-pro">
+                    <td>
+                        <label for="phone">Phone :</label>
+                    </td>
+                    <td>
+                        <div id="phone"></div>
+                    </td>
+                </tr>
+                <tr class="dis-pro">
+                    <td>
+                        <label for="gender">Gender :</label>
+                    </td>
+                    <td>
+                        <div id="gender"></div>
+                    </td>
+                </tr>
+                <tr class="dis-pro">
+                    <td>
+                        <label for="address">Address :</label>
+                    </td>
+                    <td>
+                        <div id="address"></div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <script src="form.js"></script>
+</body>
+
+</html>
