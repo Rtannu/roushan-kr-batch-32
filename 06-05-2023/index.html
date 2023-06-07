@@ -34,7 +34,7 @@
             <thead>
                 <tr>
                     <td colspan="2" align="center">
-                        Profile Form
+                        <h1>Profile Form</h1>
                     </td>
                 </tr>
             </thead>
@@ -45,7 +45,7 @@
                             <label for="first-name-input">First Name</label>
                         </td>
                         <td>
-                            <input type="text" id="first-name-input" />
+                            <input type="text" id="first-name-input" placeholder="Enter your first name" />
                         </td>
                     </tr>
                     <tr>
@@ -53,7 +53,7 @@
                             <label for="last-name-input">Last Name</label>
                         </td>
                         <td>
-                            <input type="text" id="last-name-input" />
+                            <input type="text" id="last-name-input" placeholder="Enter your last name"/>
                         </td>
                     </tr>
                     <tr>
@@ -61,7 +61,7 @@
                             <label for="email-input">Email</label>
                         </td>
                         <td>
-                            <input type="email" id="email-input" />
+                            <input type="email" id="email-input" placeholder="Enter your email"/>
                         </td>
                     </tr>
                     <tr>
@@ -69,7 +69,7 @@
                             <label for="phone-input">Phone</label>
                         </td>
                         <td>
-                            <input type="tel" id="phone-input" />
+                            <input type="tel" id="phone-input" placeholder="Enter your phone"/>
                         </td>
                     </tr>
                     <tr>
@@ -84,13 +84,32 @@
                     </tr>
                     <tr>
                         <td>
+                            <label for="hobby-input">Gender</label>
+                        </td>
+                        <td>
+                            <input type="radio" name="hobby" value="Playing Guitar">Playing Guitar
+                            <input type="radio" name="hobby" value="Listening Music">Listening Music
+                            <input type="radio" name="hobby" value="Others">Others
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             <label for="address-input">Address</label>
                         </td>
                         <td>
-                            <textarea id="address-input"></textarea>
+                            <textarea id="address-input" placeholder="Enter your address here"></textarea>
                         </td>
                     </tr>
+                    <tr>
+                        <td>
+                            <label for="dob-input">Birthday</label>
 
+                        </td>
+                        <td>
+                            <input type="date" id="dob-input" name="birthday">
+                        </td>
+                    </tr>
                     <tr>
                         <td align="center">
                             <input type="reset" value="Reset">
@@ -115,7 +134,7 @@
             <thead>
                 <tr class="dis-pro">
                     <td colspan="2" align="center">
-                        Profile
+                        <h1>Profile</h1>
                     </td>
                 </tr>
             </thead>
@@ -166,6 +185,22 @@
                     </td>
                     <td>
                         <div id="address"></div>
+                    </td>
+                </tr>
+                <tr class="dis-pro">
+                    <td>
+                        <label for="dob">DOB :</label>
+                    </td>
+                    <td>
+                        <div id="dob"></div>
+                    </td>
+                </tr>
+                <tr class="dis-pro">
+                    <td>
+                        <label for="hobby">Hobby :</label>
+                    </td>
+                    <td>
+                        <div id="hobby"></div>
                     </td>
                 </tr>
 

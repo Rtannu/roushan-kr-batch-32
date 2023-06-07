@@ -11,12 +11,22 @@ function onSubmission() {
     document.getElementById('last-name').innerHTML = document.getElementById('last-name-input').value
     document.getElementById('email').innerHTML = document.getElementById('email-input').value
     document.getElementById('phone').innerHTML = document.getElementById('phone-input').value
+    document.getElementById('dob').innerHTML = document.getElementById('dob-input').value
 
     let genderEle = document.getElementsByName('gender');
 
     for (i = 0; i < genderEle.length; i++) {
         if (genderEle[i].checked) {
             document.getElementById('gender').innerHTML = genderEle[i].value;
+            break;
+        }
+    }
+
+    let hobbyEle = document.getElementsByName('hobby');
+
+    for (i = 0; i < hobbyEle.length; i++) {
+        if (hobbyEle[i].checked) {
+            document.getElementById('hobby').innerHTML = hobbyEle[i].value;
             break;
         }
     }
