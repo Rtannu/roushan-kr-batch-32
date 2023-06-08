@@ -24,12 +24,15 @@ function onSubmission() {
 
     let hobbyEle = document.getElementsByName('hobby');
 
+    let hobbyList=[];
     for (i = 0; i < hobbyEle.length; i++) {
         if (hobbyEle[i].checked) {
-            document.getElementById('hobby').innerHTML = hobbyEle[i].value;
-            break;
+            // document.getElementById('hobby').innerHTML = hobbyEle[i].value;
+            hobbyList.push(hobbyEle[i].value)
+            // break;
         }
     }
+            document.getElementById('hobby').innerHTML = hobbyList;
 
     document.getElementById('address').innerHTML = document.getElementById('address-input').value
 
