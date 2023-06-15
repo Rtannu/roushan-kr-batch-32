@@ -1,0 +1,25 @@
+<h1>Navigation Menu</h1>
+<div class="topnav-ver">
+    <ul>
+        <li>
+            <a class="active" href="#Profile">Profile</a>
+        </li>
+        <li>
+            <a href="#Contact">Contact</a>
+        </li>
+        <li>
+            <a [hidden]="isLoginEnable" href="javascript:void(0);" (click)="callLogout()">Login</a>
+        </li>
+        <li>
+            <a [hidden]="isLogoutEnable" href="javascript:void(0);" (click)="callLogin()">Logout</a>
+        </li>
+        <input type="text" placeholder="Search..">
+
+    </ul>
+</div>
+
+
+<!-- Assignment : Design a header background blue, text color white 
+    with display menu option profile, contact , login and search box write  
+    own CSS and reflect same navigation to navigation component  
+    and it should be vertical and header should be horizontal -->

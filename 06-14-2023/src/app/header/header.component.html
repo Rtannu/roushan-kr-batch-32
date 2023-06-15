@@ -1,0 +1,16 @@
+<h1>Header Menu</h1>
+<div class="topnav">
+  <a class="active" href="#Profile">Profile</a>
+  <a href="#Contact">Contact</a>
+  <a [hidden]="isLoginEnable" href="javascript:void(0);" (click)="callLogout()">Login</a>
+  <a [hidden]="isLogoutEnable" href="javascript:void(0);" (click)="callLogin()">Logout</a>
+  <input type="text" placeholder="Search..">
+
+</div>
+
+
+<!-- Assignment : Design a header background blue, text color white 
+  with display menu option profile, contact , login and search box write  
+  own CSS and reflect same navigation to navigation component  
+  and it should be vertical and header should be horizontal -->
+  <!-- when clikc login button login text change to logout and vice versa  -->
