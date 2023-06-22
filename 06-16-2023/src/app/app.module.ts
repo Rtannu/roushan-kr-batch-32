@@ -11,7 +11,7 @@ import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [	
-    AppComponent, SingUpComponent, LoginComponent, ProfileComponent,
+    AppComponent, SingUpComponent, LoginComponent, ProfileComponent
    ],
   imports: [
     BrowserModule,

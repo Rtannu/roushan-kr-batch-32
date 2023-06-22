@@ -15,15 +15,16 @@ export class ProfileComponent implements OnInit{
   email: any;
   dob:any;
   gender:any;
-  constructor(private localstorageService: LocalStorageService,private router: Router,private route: ActivatedRoute) {
+  constructor(public localstorageService: LocalStorageService,private router: Router,private route: ActivatedRoute) {
     // this.router.events.subscribe(event => {
     //   if (!(event instanceof NavigationEnd)) { return; }
     //   console.log(event);
     //   this.ngOnInit();
     // });
-    this.router.routeReuseStrategy.shouldReuseRoute = function() {
-      return false;
-  };
+  //   this.router.routeReuseStrategy.shouldReuseRoute = function() {
+  //     return false;
+  // };
+  
   }
 
   ngOnInit(): void {
@@ -34,6 +35,11 @@ export class ProfileComponent implements OnInit{
     this.email = this.localstorageService.getData("email");
     this.dob=this.localstorageService.getData("dob");
     this.gender=this.localstorageService.getData("gender");
+  }
+
+  logout(){
+    this.localstorageService.saveData("isLoggedIn","false")
+    this.router.navigate(['login'])
   }
   
 }
