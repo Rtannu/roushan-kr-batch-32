@@ -8,10 +8,11 @@ import { FormControl, FormsModule } from '@angular/forms';
 import { SingUpComponent } from './sing-up/sing-up.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 @NgModule({
   declarations: [	
-    AppComponent, SingUpComponent, LoginComponent, ProfileComponent
+    AppComponent, SingUpComponent, LoginComponent, ProfileComponent, EditProfileComponent
    ],
   imports: [
     BrowserModule,

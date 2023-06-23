@@ -39,7 +39,16 @@ export class ProfileComponent implements OnInit{
 
   logout(){
     this.localstorageService.saveData("isLoggedIn","false")
-    this.router.navigate(['login'])
+    if(confirm("Do you want to logout????")){
+      this.router.navigate(['login'])
+       return true;
+    }
+    return false;
+    // alert("you are going to logout..........")
+  }
+
+  editProfile(){
+    this.router.navigate(['/edit-profile']);
   }
   
 }

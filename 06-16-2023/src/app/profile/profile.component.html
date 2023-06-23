@@ -4,6 +4,9 @@
     <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center  px-2">
         <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
             <h1 class="mb-8 text-3xl text-center">Welcome {{firstName}}</h1>
+            <button (click)="editProfile()" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-8 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+              Edit Profile
+            </button>
             <img src="assets/pr.png">
             <label >First Name : </label>{{localstorageService.getData("firstName")}}<br>
             <label >Last Name : </label>{{lastName}}<br>
@@ -13,7 +16,7 @@
             <label >Gender : </label>{{gender}}<br>
            
         </div>
-        <button (click)="logout()" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-8 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+          <button (click)="logout()" class="bg-blue-500 hover:bg-red-700 text-white font-bold py-2 px-8 border-b-4 border-red-700 hover:border-blue-500 rounded">
             Logout
           </button>
     </div>

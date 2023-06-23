@@ -1,0 +1,41 @@
+<!-- component -->
+<div class="bg-grey-lighter min-h-screen flex flex-col ml-96">
+    <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center  px-2">
+        <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
+            <h1 class="mb-8 text-3xl text-center">Edit Profile</h1>
+            <button (click)="backProfile()"
+                class="w-full text-center py-3 rounded bg-green-500 text-white hover:bg-green-dark focus:outline-none my-1">Go Profile</button>
+            <input type="text" class="block border border-grey-light w-full p-3 rounded mb-4" name="firstName"
+                [(ngModel)]="firstName" placeholder="First Name" />
+
+            <input type="text" class="block border border-grey-light w-full p-3 rounded mb-4" name="firstName"
+                [(ngModel)]="lastName" placeholder="Last Name" />
+
+
+             <input type="tel" class="block border border-grey-light w-full p-3 rounded mb-4" name="phone"
+                [(ngModel)]="phone" placeholder="Phone" />
+
+            <input type="text" class="block border border-grey-light w-full p-3 rounded mb-4" name="email"
+                [(ngModel)]="email" placeholder="Email" />
+
+            <input type="text" placeholder="DOB" class="block border border-grey-light w-full p-3 rounded mb-4" name="dob"
+                [(ngModel)]="dob"
+                onfocus="(this.type='date')" onblur="(this.type='text')">
+
+                <input type="text" class="block border border-grey-light w-full p-3 rounded mb-4" name="gender"
+                [(ngModel)]="gender" placeholder="Gender" />
+                
+            <input type="password" class="block border border-grey-light w-full p-3 rounded mb-4" name="password"
+                [(ngModel)]="password" placeholder="Password" />
+            <input type="password" class="block border border-grey-light w-full p-3 rounded mb-4"
+                name="confirm_password" [(ngModel)]="confirmPassword" placeholder="Confirm Password" />
+
+
+            <button (click)="save()"
+                class="w-full text-center py-3 rounded bg-green-500 text-white hover:bg-green-dark focus:outline-none my-1">Save
+                Account</button>
+            
+        </div>
+    </div>
+</div>
+
