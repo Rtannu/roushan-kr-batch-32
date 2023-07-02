@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class SidebarComponent {
 
   constructor(private router:Router){
+    this.router.navigate(["sidebar-menu",{ outlets: { aux: ["dashboard"] } }]);
   }
 
 }

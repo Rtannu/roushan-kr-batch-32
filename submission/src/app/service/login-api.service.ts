@@ -10,8 +10,8 @@ export class LoginApiService {
   readonly email: string = "";
   readonly password: string = "";
   constructor() {
-    this.email = "abc@gmail.com";
-    this.password = "Angular@2023";
+    this.email = "dnt@gmail.com";
+    this.password = "Dnt@2023";
   }
 
   isValidUser(email: string, password: string) {

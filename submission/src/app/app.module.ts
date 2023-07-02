@@ -7,9 +7,12 @@ import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { SubmissionComponent } from './submission/submission.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { BarChartComponent } from './bar-chart/bar-chart.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +22,16 @@ import { SubmissionComponent } from './submission/submission.component';
     FooterComponent,
     MainComponent,
     SidebarComponent,
-    SubmissionComponent
+    SubmissionComponent,
+    DashboardComponent,
+    BarChartComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

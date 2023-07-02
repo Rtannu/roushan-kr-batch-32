@@ -3,42 +3,37 @@
         <div class="col">
             <div class="dropdown">
                 <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
-                    Technology
+                    {{tech}}
                 </button>
                 <ul class="dropdown-menu">
-                    <li *ngFor="let tech of teachList"><a class="dropdown-item" href="#">{{tech}}</a></li>
-                    <!-- <li><a class="dropdown-item" href="#">Node</a></li>
-                    <li><a class="dropdown-item" href="#">Data</a></li> -->
+                    <li *ngFor="let tech of teachList"><a class="dropdown-item" href="javascript:void(0)" (click)="selectTech(tech)">{{tech}}</a></li>
                 </ul>
             </div>
         </div>
         <div class="col">
             <div class="dropdown">
                 <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
-                    Team Lead
+                    {{teamLead}}
                 </button>
                 <ul class="dropdown-menu">
-                    <li *ngFor="let teamLead of teamLeadList"><a class="dropdown-item" href="#">{{teamLead}}</a></li>
-                    <!-- <li><a class="dropdown-item" href="#">Node</a></li> -->
-                    <!-- <li><a class="dropdown-item" href="#">Data</a></li> -->
+                    <li *ngFor="let teamLead of teamLeadList"><a class="dropdown-item" href="javascript:void(0)" (click)="selectTeamLead(teamLead)">{{teamLead}}</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="col">
-            <!-- <button class="btn btn-success">Create</button> -->
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createModal">
                 Create
             </button>
 
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            <!-- Create Modal -->
+            <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="createModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">New Submission</h5>
+                            <h5 class="modal-title" id="createModalLabel">New Submission</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -67,7 +62,55 @@
 
 
 
-
+<!-- Edit Modal -->
+<div *ngIf="showModalBox"  class="modal fade" id="editModalLabel" tabindex="-1" aria-labelledby="editModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" >
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="editModalLabel">Edit Submission</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="editForm" (ngSubmit)="saveChanges()">
+                <div class="mb-3 mt-3">
+                  <label for="s_no" class="form-label">S.NO:</label>
+                  <input type="text" class="form-control" id="s_no" placeholder="Enter S.NO" formControlName="s_no"  >
+                </div>
+                <div class="mb-3 mt-3">
+                  <label for="name" class="form-label">Name:</label>
+                  <input type="text" class="form-control" id="name" placeholder="Enter name" formControlName="name" [value]="this.editData.name">
+                </div>
+                <div class="mb-3">
+                  <label for="rate" class="form-label">Rate:</label>
+                  <input type="text" class="form-control" id="rate" placeholder="Enter rate" formControlName="rate" [value]="editData.rate">
+                </div>
+                <div class="mb-3">
+                  <label for="vendor" class="form-label">Vendor:</label>
+                  <input type="text" class="form-control" id="vendor" placeholder="Enter vendor" formControlName="vendor" [value]="editData.vendor">
+                </div>
+                <div class="mb-3">
+                  <label for="implementation" class="form-label">Implementation:</label>
+                  <input type="text" class="form-control" id="implementation" placeholder="Enter implementation" formControlName="implementation" [value]="editData.implementation">
+                </div>
+                <div class="mb-3">
+                  <label for="vendor_email" class="form-label">Vendor Email:</label>
+                  <input type="text" class="form-control" id="vendor_email" placeholder="Enter vendor email" formControlName="vendor_email" [value]="editData.vendor_email">
+                </div>
+                <div class="mb-3">
+                  <label for="status" class="form-label">Status:</label>
+                  <input type="text" class="form-control" id="status" placeholder="Enter status" formControlName="status" [value]="editData.status">
+                </div>
+                <button  type="submit" class="btn btn-primary">Submit</button>
+              </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" #closeEditModel>Close</button>
+            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
+    </div>
+</div>
+</div>
 
 
 
@@ -76,27 +119,29 @@
 <table class="table table-bordered table-striped table-dark">
     <thead class="thead-dark">
       <tr>
-        <th *ngFor="let column of columnList" scope="col">{{column}}</th>
-        <!-- <th scope="col">S.NO</th>
-        <th scope="col">Name</th>
-        <th scope="col">Rate</th>
-        <th scope="col">Vendor</th>
-        <th scope="col">Implementation</th>
-        <th scope="col">Vendor Email</th>
-        <th scope="col">Status</th>
-        <th scope="col">Action</th> -->
+        <th class="text-center" *ngFor="let column of columnList" scope="col">{{column}}</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>75</td>
-        <td>TCS</td>
-        <td>JP</td>
-        <td>tcs@gmail.com</td>
-        <td>CONFIRMED</td>
-        <td>EDIT</td>
+      <tr *ngFor="let rowData of tableData">
+
+        <!-- <td class="text-center" *ngFor="let key in rowData">{{rowData[key]}}</td> -->
+         <td class="text-center">{{rowData.s_no}}</td>
+        <td class="text-center">{{rowData.name}}</td>
+        <td class="text-center">{{rowData.rate}}</td>
+        <td class="text-center">{{rowData.vendor}}</td>
+        <td class="text-center">{{rowData.implementation}}</td>
+        <td class="text-center">{{rowData.vendor_email}}</td>
+        <td class="text-center">{{rowData.status}}</td>
+        <td class="text-center">
+          <button (click)="deleteTableData(rowData.s_no)" type="button" class="btn btn-danger mx-2">Delete</button>
+          <button (click)="openEditModel(rowData.s_no,rowData.name,rowData.rate,rowData.vendor,rowData.implementation,rowData.vendor_email,rowData.status)" type="button" class="btn btn-info mx-2" data-bs-toggle="modal" data-bs-target="#editModalLabel">Edit</button>
+        </td>
       </tr>
     </tbody>
   </table>
+
+
+  
+
+  

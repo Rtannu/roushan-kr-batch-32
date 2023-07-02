@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { LoginFlagService } from '../service/login-flag.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -10,12 +10,16 @@ import { Router } from '@angular/router';
 export class HeaderComponent {
 
 
-  constructor(public loginFlagService:LoginFlagService,private router:Router){
+  constructor(public loginFlagService:LoginFlagService,private router:Router,private route:ActivatedRoute){
   }
 
   logout(){
     this.loginFlagService.setLoggedInFlag('false');
     this.router.navigateByUrl('');
+  }
+
+  openProfile(){
+    this.router.navigate(["sidebar-menu/profile"],{relativeTo:this.route});
   }
 
 }
