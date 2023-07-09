@@ -19,7 +19,7 @@ export class HeaderComponent {
   }
 
   openProfile(){
-    this.router.navigate(["sidebar-menu/profile"],{relativeTo:this.route});
+    this.router.navigate(["sidebar-menu",{ outlets: { aux: ["profile"] } }]);
   }
 
 }

@@ -6,10 +6,12 @@ import { SubmissionComponent } from './submission/submission.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AuthLoggedInGaurdService } from './service/auth-logged-in-gaurd.service';
+import { AuthBackPageGaurdService } from './service/auth--back-page-gaurd.service';
 
 const routes: Routes = [
-  { path: "", component: MainComponent },
-  { path: "login", component: LoginComponent },
+  { path: "", component: MainComponent,canActivate:[AuthBackPageGaurdService] },
+  { path: "login", component: LoginComponent ,canActivate:[AuthBackPageGaurdService]},
   // {path:"sidebar-menu/profile",component:ProfileComponent,outlet:'aux'},
   {
     path: "sidebar-menu", component: SidebarComponent, children: [
@@ -28,7 +30,7 @@ const routes: Routes = [
         component: ProfileComponent,
         outlet: "aux"
       }
-    ]
+    ],canActivate:[AuthLoggedInGaurdService]
   }
 ];
 
